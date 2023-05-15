@@ -28,7 +28,7 @@ export const Navbar = () => {
             <button onClick={() => signOut()}>Log out</button>
           </div>
         ) : (
-            <button onClick={() => signOut()}>Log out</button>
+            <button onClick={() => signOut()}>Log In</button>
         )}
       </div>
     </div>
