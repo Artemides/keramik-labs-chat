@@ -3,7 +3,7 @@ import NextAuth from "next-auth/next";
 import GithubAuthProvider from "next-auth/providers/github";
 import jsonwebtoken from "jsonwebtoken";
 import { JWT } from "next-auth/jwt";
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     GithubAuthProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
