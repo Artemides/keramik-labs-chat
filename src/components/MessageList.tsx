@@ -17,10 +17,17 @@ const gerRecentMessageQuery = gql`
     }
   }
 `;
+
+type MessageCollection = {
+  messageCollection: { edges: { node: IMessage }[] };
+};
 export const MessagesList = () => {
-  const { loading, error, data } = useQuery<{
-    messageCollection: { edges: { node: IMessage }[] };
-  }>(gerRecentMessageQuery, { variables: { last: 100 } });
+  const { loading, error, data } = useQuery<MessageCollection>(
+    gerRecentMessageQuery,
+    {
+      variables: { last: 100 },
+    }
+  );
   return (
     <div className="w-full flex flex-col space-y-3 overflow-y-scroll">
       {data?.messageCollection?.edges?.map(({ node }) => (
