@@ -6,7 +6,7 @@ import type { Message as IMessage } from "./Message";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 const gerRecentMessageQuery = gql`
-  query GetRecentMessages($last: Int) {
+  query GetRecentMessages($last: Int) @live {
     messageCollection(last: $last) {
       edges {
         node {
