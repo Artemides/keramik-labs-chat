@@ -1,4 +1,3 @@
-
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +5,7 @@ import React from "react";
 export const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <div className="w-screen h-12 sticky top-0 flex justify-between items-center bg-slate-950">
+    <div className="w-screen h-12 sticky top-0 flex justify-between items-center px-12 bg-slate-950">
       <nav className="flex-1">
         <ul className="flex">
           <li>Home</li>
@@ -28,7 +27,7 @@ export const Navbar = () => {
             <button onClick={() => signOut()}>Log out</button>
           </div>
         ) : (
-            <button onClick={() => signOut()}>Log In</button>
+          <button onClick={() => signOut()}>Log In</button>
         )}
       </div>
     </div>

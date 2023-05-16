@@ -1,3 +1,5 @@
+"use client";
+
 import { gql, useQuery } from "@apollo/client";
 import { Message } from "./Message";
 import type { Message as IMessage } from "./Message";

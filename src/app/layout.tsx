@@ -18,8 +18,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SessionProvider>
           <ApolloProviderWrapper>
-            <Navbar />
-            <main>{children}</main>
+            <main className="h-screen">{children}</main>
           </ApolloProviderWrapper>
         </SessionProvider>
       </body>

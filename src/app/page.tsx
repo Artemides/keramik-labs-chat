@@ -1,3 +1,5 @@
+"use client";
+
 import { MessageForm } from "@/components/MessageForm";
 import { MessagesList } from "@/components/MessageList";
 import { Navbar } from "@/components/Navbar";
@@ -7,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
   const { data: session } = useSession();
   return (
-    <div className="flex flex-col">
+    <div className="h-screen flex flex-col">
       <Navbar />
       {session ? (
         <>
