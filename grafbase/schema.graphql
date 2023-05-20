@@ -1,5 +1,5 @@
 type Message @model {
-  unsername: String
+  username: String
   avatar: URL
   body: String
   likes: Int @default(value: 0)

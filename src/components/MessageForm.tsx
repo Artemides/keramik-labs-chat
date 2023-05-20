@@ -18,6 +18,7 @@ export const MessageForm = () => {
   const [AddNewMessage] = useMutation(AddNewMessageMutation);
   const [body, setBody] = useState<string>("");
   const { data: session } = useSession();
+  console.log({ session });
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!body) return;

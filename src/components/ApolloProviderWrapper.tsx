@@ -37,7 +37,7 @@ export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
         authMiddleWare,
         split(
           ({ query, operationName, variables }) =>
-            isLiveQuery(getOperationAST(query, operationName)),
+            isLiveQuery(getOperationAST(query, operationName), variables),
           sseLink,
           httpLink
         ),

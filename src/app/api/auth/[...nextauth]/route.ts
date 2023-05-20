@@ -30,7 +30,7 @@ export const authOptions: AuthOptions = {
       return token;
     },
     session({ session, token }) {
-      if (token.name && session.user) session.user = token;
+      if (token.name && session.user) session.user.name = token.name;
       return session;
     },
   },

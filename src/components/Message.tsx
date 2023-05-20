@@ -15,6 +15,7 @@ type MessageProps = {
   message: Message;
 };
 export const Message = ({ message }: MessageProps) => {
+  console.log({ message });
   const { data: session } = useSession();
   return (
     <div
