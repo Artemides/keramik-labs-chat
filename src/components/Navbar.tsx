@@ -1,4 +1,4 @@
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 
@@ -27,7 +27,7 @@ export const Navbar = () => {
             <button onClick={() => signOut()}>Log out</button>
           </div>
         ) : (
-          <button onClick={() => signOut()}>Log In</button>
+          <button onClick={() => signIn()}>Log In</button>
         )}
       </div>
     </div>

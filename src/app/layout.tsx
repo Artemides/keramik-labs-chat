@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import { Navbar } from "@/components/Navbar";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloProviderWrapper } from "@/components/ApolloProviderWrapper";

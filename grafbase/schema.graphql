@@ -1,21 +1,17 @@
-type Message @model{
-    unsername: String
-    avatar:URL
-    body:String
-    likes: Int @default(value:0)
+type Message @model {
+  unsername: String
+  avatar: URL
+  body: String
+  likes: Int @default(value: 0)
 }
 
 schema
   @auth(
-    providers:[
-      {
-         type:jwt,
-         issuer:"nextauth",
-         secret:"{{env.NEXTAUTH_SECRET}}"
-      }
+    providers: [
+      { type: jwt, issuer: "nextauth", secret: "{{env.NEXTAUTH_SECRET}}" }
     ]
 
-    rules:[{allow:private}]
-  ){
-    query:Query
-  }
+    rules: [{ allow: private }]
+  ) {
+  query: Query
+}

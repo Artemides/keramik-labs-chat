@@ -20,18 +20,20 @@ export const authOptions: AuthOptions = {
         },
         secret
       ),
-    decode:async({secret,token})=>jsonwebtoken.verify(token!,secret) as JWT
+    decode: async ({ secret, token }) =>
+      jsonwebtoken.verify(token!, secret) as JWT,
   },
-  callbacks:{
-    async jwt({token,profile}){
-        if(profile) token.name=profile?.name!;
+  callbacks: {
+    async jwt({ token, profile }) {
+      if (profile) token.name = profile?.name!;
 
-        return token;
+      return token;
     },
-    session({session,token}){
-        if(token.name && session.user) session.user.name=token.name; 
-        return session
-    }
-  }
+    session({ session, token }) {
+      if (token.name && session.user) session.user = token;
+      return session;
+    },
+  },
 };
-export default NextAuth(authOptions);
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };

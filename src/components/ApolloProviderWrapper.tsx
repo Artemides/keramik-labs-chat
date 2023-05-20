@@ -20,7 +20,10 @@ const sseLink = new SSELink({ uri: process.env.NEXT_PUBLIC_GRAFBASE_API_URL! });
 export const ApolloProviderWrapper = ({ children }: PropsWithChildren) => {
   const client = useMemo(() => {
     const authMiddleWare = setContext(async (_, { headers }) => {
-      const token = await fetch("/api/auth/token").then((res) => res.json());
+      const { token } = await fetch("/api/auth/token").then((res) =>
+        res.json()
+      );
+
       return {
         headers: {
           ...headers,
